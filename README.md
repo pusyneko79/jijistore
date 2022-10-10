@@ -1,4 +1,4 @@
-# footshop
+# JiJi Store
 
 A new Flutter project.
 
