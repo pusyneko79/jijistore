@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:footshop/services/apiService.dart';
 import 'package:footshop/view/home/homePage.dart';
 import 'package:footshop/view/login/signup.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../../helper/bezierContainer.dart';
@@ -40,10 +39,8 @@ class _LoginPageState extends State<LoginPage> {
           TextField(
               controller: controller,
               obscureText: isPassword,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  fillColor: Color(0xfff3f3f4),
-                  filled: true))
+              decoration:
+                  InputDecoration(border: InputBorder.none, filled: true))
         ],
       ),
     );
@@ -90,13 +87,6 @@ class _LoginPageState extends State<LoginPage> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(5)),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  color: Colors.grey.shade200,
-                  offset: Offset(2, 4),
-                  blurRadius: 5,
-                  spreadRadius: 2)
-            ],
             gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
@@ -187,7 +177,7 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             TextSpan(
               text: 'Shop',
-              style: TextStyle(color: Colors.black, fontSize: 30),
+              style: TextStyle(fontSize: 30, color: Colors.grey),
             ),
           ]),
     );
@@ -284,7 +274,6 @@ showLoaderDialog(
 
   AlertDialog fail = AlertDialog(
     elevation: 0,
-    backgroundColor: Colors.white,
     icon: Center(
         child: Icon(
       Icons.highlight_off,
@@ -300,7 +289,6 @@ showLoaderDialog(
         onPressed: () => Navigator.pop(context, 'OK'),
         child: const Text(
           'OK',
-          style: TextStyle(color: Colors.black),
         ),
       ),
     ],

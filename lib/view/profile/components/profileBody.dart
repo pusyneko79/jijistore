@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:footshop/view/profile/profileDetailPage.dart';
+import 'package:footshop/view/setting/settingPage.dart';
 
 import '../../login/Login.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
-class Body extends StatelessWidget {
+class ProfileBody extends StatelessWidget {
+  const ProfileBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -16,12 +20,18 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "Tài khoản",
             icon: "asset/icons/UserIcon.svg",
-            press: () => {},
+            press: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfileDetailPage()))
+            },
           ),
           ProfileMenu(
             text: "Cài đặt",
             icon: "asset/icons/Settings.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Setting()));
+            },
           ),
           ProfileMenu(
             text: "Hỗ trợ",

@@ -30,6 +30,31 @@ Future<int> createUser(UserRegisterModel userRegisterModel) async {
   }
 }
 
+Future<int> updateUser(UserRegisterModel userRegisterModel) async {
+  final response = await http.put(
+    Uri.parse("${baseUrl}/register/"),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(<String, String>{
+      ""
+          "name": userRegisterModel.name ?? "",
+      "address": userRegisterModel.address ?? "",
+      "age": userRegisterModel.age.toString(),
+      "img": "https://cdn-icons-png.flaticon.com/512/147/147133.png",
+      "email": userRegisterModel.email ?? "",
+      "password": userRegisterModel.password ?? "",
+      "phone": userRegisterModel.phone ?? "0"
+    }),
+  );
+  print(response.body);
+  if (response.statusCode == 200) {
+    return 200;
+  } else {
+    return 400;
+  }
+}
+
 Future<dynamic> login(String email, String password) async {
   final response = await http.post(
     Uri.parse("${baseUrl}/login/"),

@@ -4,4 +4,4 @@ Color blue = new Color(0xff50c9ff);
 Color green = new Color(0xff00e582);
 Color black = new Color(0xff4d4d4d);
 Color greenBtn = new Color(0xff00d672);
-Color orange = Color.fromARGB(255, 226, 179, 97);
+Color orange = Color(0xFFFFA53E);
